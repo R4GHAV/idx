@@ -1,0 +1,75 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 15px 45px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .drop-title {
+    padding: 12px 5px;
+  }
+
+  .dropdown-content img {
+      width: 60px;
+      display: inline;
+  }
+
+  .dropdown-content .res_img {
+    width: 40px;
+    }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 5px;
+    text-decoration: none;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .intHead {
+      font-weight: 600;
+  }
+
+  .intBody {
+      color: rgb(105, 105, 105);
+  }
+
+  .blueBg, .whiteBg {
+      height: 500px;
+      width: 100%;
+  }
+
+  .blueBg {
+    background: linear-gradient(225.71deg, #7842DB 7.15%, #2D51D6 70.87%, #0078E7 105.58%);
+  }
+
+  .vidSection {
+      height: 500px;
+      width: 50%;
+      border-radius: 20px;
+      position: absolute;
+      top: 25%;
+      right: 25%;
+      display: flex;
+  }
