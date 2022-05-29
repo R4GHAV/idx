@@ -38,6 +38,13 @@ body {
     text-decoration: none;
     text-align: left;
   }
+
+  .newbluetext {
+    background: linear-gradient(225.71deg, #7842DB 7.15%, #2D51D6 70.87%, #0078E7 105.58%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+  }
   
   .dropdown-content a:hover {
     background-color: #ddd;
@@ -56,20 +63,175 @@ body {
   }
 
   .blueBg, .whiteBg {
-      height: 500px;
+      height: 400px;
       width: 100%;
   }
 
-  .blueBg {
+  .blueBgcolor {
     background: linear-gradient(225.71deg, #7842DB 7.15%, #2D51D6 70.87%, #0078E7 105.58%);
   }
 
+  .whiteBg, .whiteBg100 {
+    background-color: #F9F9F9;
+  }
+
+  .whiteBg100, .bg100 {
+    height: 100px;
+  }
+
   .vidSection {
-      height: 500px;
-      width: 50%;
+      height: 400px;
+      width: 40%;
       border-radius: 20px;
       position: absolute;
-      top: 25%;
-      right: 25%;
+      top: 30%;
+      background-image: url(../images/vid.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      right: 30%;
       display: flex;
+  }
+
+  .companies {
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    top: 0;
+    background-color: white;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .companies p {
+    margin-bottom: 20px;
+  }
+
+  .slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    
+    width: var(--slider-size);
+    margin: 1em auto;
+    
+    border-radius: var(--slider-border-radius);
+  }
+  
+  /* Hide Scrollbar itself */
+  .slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slidewrapper {
+    scroll-snap-align: center;
+  
+    /* Size me */
+    flex: 0 0 var(--slider-size);
+    width: var(--slider-size);
+    
+    /* This is needed for the paddings (in the full-bleed variant) to work …*/
+    box-sizing: content-box;
+  
+    /* To allow the child .slide to stretch out inside me */
+    display: flex;
+  }
+  
+  .slide {
+    background: rgb(0 0 0 / 0.1);
+    
+    /* Stretch me out in my .slidewrapper parent */
+    flex: 1;
+    
+    /* Give me some height */
+    min-height: 200px;
+    aspect-ratio: 16/9;
+    
+    /* Center text */
+    display: grid;
+    place-content: center;
+  }
+  
+  /* @ref https://www.bram.us/2019/04/09/breaking-elements-out-of-their-containers-in-css-with-full-bleed/ */
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Put border-radius on the individual slides, not the slider-container */
+  .slider.full-bleed {
+    border-radius: 0;
+  }
+  .slider.full-bleed .slide {
+    border-radius: var(--slider-border-radius);
+  }
+  
+  /* Add a faux gap between the slidewrappers */
+  .slider.full-bleed .slidewrapper {	
+    margin-right: var(--slider-fullbleed-gap);
+  }
+  
+  /* Offset first slidewrapper from the left so that it apppears centered on load */
+  .slider.full-bleed .slidewrapper:first-child {
+    padding-left: calc(50vw - (var(--slider-size) / 2));
+  }
+  
+  /* Offset last slidewrapper so that it apppears centered when at the last item */
+  /* Note that margin-right won't work …*/
+  .slider.full-bleed .slidewrapper:last-child {
+    margin-right: 0;
+    padding-right: calc(50vw - (var(--slider-size) / 2));
+  }
+  
+  
+  /* Debug Outlines */
+  #debug, [for="debug"] {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+  [for="debug"] {
+    left: 2em;
+    line-height: 1em;
+  }
+  
+  #debug:checked ~ section .slider {	
+    box-shadow: 0 0 0 4px hotpink;
+  }
+  #debug:checked ~ section .slidewrapper {
+    box-shadow: inset 0 0 0 4px lime;
+    background: rgb(120 255 0 / 0.2);
+  }
+  #debug:checked ~ section .slide {
+    box-shadow: inset 0 0 0 4px gray;
+  }
+
+  .step_section {
+    height: 333px;
+  }
+
+  .step_num {
+    height: 70px;
+    width: 70px;
+    background-image: url(../images/rectangle_box.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .step {
+    height: 80px;
+  }
+
+  .rotate {
+    transform: rotateZ(180deg);
   }
